@@ -1,7 +1,6 @@
 <template>
     <b-modal v-model="toggleModal"
         v-if="toggleModal"
-        hide-footer
         id="thingamabob-modal"
         title="Thingamabob">
         <div v-if="thingamabob">

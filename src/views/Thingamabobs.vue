@@ -1,11 +1,11 @@
 <template>
-  <main class="thingamabobs container">
+  <main class="thingamabobs main-c container">
     <h1>Thingamabob List:</h1>
     <b-row>
       <b-col sm="12">
 
         <b-list-group v-if="thingamabobs && thingamabobs.length > 0"
-          class="t-list">
+          class="t-list list-el">
           <b-list-group-item v-for="(thingamabob, ind) of thingamabobs"
             @click="handleTClick"
             :id="thingamabob._id"
@@ -61,11 +61,5 @@ export default {
 </script>
 
 <style>
-.thingamabobs {
-  margin-top: 15px;
-  width: 100%;
-}
-.t-list {
-  margin-top: 20px;
-}
+
 </style>
