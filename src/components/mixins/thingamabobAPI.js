@@ -5,7 +5,7 @@ import {apiAddress} from '../../utils'
 export default {
     data : function () {
         return {
-            bAddress : `${apiAddress}/thingamabobs`,
+            tAddress : `${apiAddress}/thingamabobs`,
             tBackMsg : null,
             thingamabob : null,
             thingamabobs : null
@@ -13,7 +13,7 @@ export default {
     },
     methods : {
         getThingamabobs : function () {
-            const endpnt = this.bAddress,
+            const endpnt = this.tAddress,
                 reqOpts = { method : 'GET', mode : 'cors' },
                 getReq = new Request(endpnt, reqOpts)
 
@@ -31,7 +31,7 @@ export default {
                 .catch(err => this.tBackMsg = `Error retrieving thingamabobs: ${err}`)
         },
         getThinggy : function (tId) {
-            const endpnt = `${this.bAddress}/${tId}`,
+            const endpnt = `${this.tAddress}/${tId}`,
                 reqOpts = { method : 'GET', mode : 'cors' },
                 getReq = new Request(endpnt, reqOpts)
             
