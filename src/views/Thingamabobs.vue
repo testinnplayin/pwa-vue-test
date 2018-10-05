@@ -53,6 +53,8 @@ export default {
       this.showModal = true
     },
     turnOffModal : function () {
+      this.thingamabob = null
+      this.tBackMsg = null
       if (this.showModal) this.showModal = !this.showModal
     }
   },

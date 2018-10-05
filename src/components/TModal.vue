@@ -6,7 +6,7 @@
         <div v-if="thingamabob">
             {{thingamabob.awesome_field}}
         </div>
-        <div v-else>No data...</div>
+        <div v-else>Loading...</div>
     </b-modal>
 
 </template>
