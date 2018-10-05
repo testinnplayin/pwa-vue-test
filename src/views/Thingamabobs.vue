@@ -20,7 +20,9 @@
 
       </b-col>
     </b-row>
-    <t-modal></t-modal>
+    <t-modal @turnOffModal="turnOffModal"
+      :show-modal="showModal"
+      :thingamabob="thingamabob"></t-modal>
   </main>
 </template>
 
@@ -35,6 +37,7 @@ export default {
   name : 'Thingamabobs',
   data : function () {
     return {
+      selT : null,
       showModal : false
     }
   },
@@ -44,12 +47,16 @@ export default {
   },
   methods : {
     handleTClick : function (e) {
-      console.log('handleTClick ', e.currentTarget)
-      this.getThinggy(e.currentTarget.getAttribute('id'));
+      const tId = e.currentTarget.getAttribute('id')
+      this.selT = tId
+      this.getThinggy(tId)
       this.showModal = true
+    },
+    turnOffModal : function () {
+      if (this.showModal) this.showModal = !this.showModal
     }
   },
-  mixins : [thingamabobAPI],
+  mixins : [thingamabobAPI]
 }
 </script>
 

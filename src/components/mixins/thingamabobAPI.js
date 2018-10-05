@@ -42,7 +42,6 @@ export default {
                 })
                 .then(res => res.json()
                 .then(data => {
-                    console.log('data ', data)
                     this.thingamabob = data.thingamabob
                     this.tBackMsg = `Successful retrieval of thingamabob ${tId}`
                 }))
