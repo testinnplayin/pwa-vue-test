@@ -21,20 +21,41 @@
 
             </b-col>
         </b-row>
+        <d-modal 
+            @turnOffDModal="turnOffDModal"
+            :dohicky="dohicky"
+            :show-d-modal="showDModal"></d-modal>
     </main>
 </template>
 
 <script>
+// Mixins
 import dohickyAPI from '@/components/mixins/dohickyAPI'
+
+// Components
+import DModal from '@/components/DModal'
 
 export default {
     name : 'Dohickies',
+    data : function () {
+        return {
+            showDModal : false
+        }
+    },
+    components : {DModal},
     created : function () {
         this.getDohickies()
     },
     methods : {
         handleDClick : function (e) {
-
+            const dId = e.currentTarget.getAttribute('id')
+            this.getDohicky(dId)
+            this.showDModal = true
+        },
+        turnOffDModal : function () {
+            this.dohicky = null
+            this.doBMsg = null
+            if (this.showDModal) this.showDModal = !this.showDModal
         }
     },
     mixins : [dohickyAPI]
